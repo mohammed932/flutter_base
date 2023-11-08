@@ -5,7 +5,7 @@ import '../../constants/app_text_style_enum.dart';
 
 // ignore: must_be_immutable
 class AppText extends StatelessWidget {
-  final AgriTextStyle style;
+  final AppTextStyle style;
   final String title;
   @override
   Key? key;
@@ -50,9 +50,9 @@ class AppText extends StatelessWidget {
   }
 
   static TextStyle getStyle(
-      {required BuildContext ctx, required AgriTextStyle style}) {
+      {required BuildContext ctx, required AppTextStyle style}) {
     switch (style) {
-      case AgriTextStyle.blackW500F10:
+      case AppTextStyle.blackW500F10:
         return Theme.of(ctx).custom.blackW500F10;
 
       default:

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +9,11 @@ import 'package:interview_test/injection.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  runApp(MyApp());
+  runApp(EasyLocalization(
+      path: "assets/langs",
+      supportedLocales: const [Locale('en', 'US'), Locale('ar', 'EG')],
+      startLocale: const Locale('ar', 'EG'),
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -25,6 +30,9 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp.router(
             title: 'Ogee',
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
             debugShowCheckedModeBanner: false,
             theme: AppThemes.lightTheme,
             routerConfig: _appRouter.config(),

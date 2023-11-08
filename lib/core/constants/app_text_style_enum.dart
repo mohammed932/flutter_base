@@ -1,3 +1,3 @@
-enum AgriTextStyle {
+enum AppTextStyle {
   blackW500F10,
 }
