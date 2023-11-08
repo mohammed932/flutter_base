@@ -1,9 +1,8 @@
-const String imagesPath = "assets/images/";
+const String iconsPath = "assets/icons/";
 
-class AppImages {
+class AppIcons {
   static const String placeHolder = 'assets/images/placeholder.png';
   static const String failbackImage200 = 'https://placehold.co/200';
   static const String failbackImage600 = 'https://placehold.co/600';
-  static const String logo = "${imagesPath}logo.png";
-  static const String splashVector = "${imagesPath}splashVector.png";
+  static const String languageIcon = "${iconsPath}languageIcon.svg";
 }
