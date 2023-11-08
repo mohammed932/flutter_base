@@ -12,7 +12,7 @@ void main() async {
   runApp(EasyLocalization(
       path: "assets/langs",
       supportedLocales: const [Locale('en', 'US'), Locale('ar', 'EG')],
-      startLocale: const Locale('ar', 'EG'),
+      startLocale: Locale('en', 'US'),
       child: MyApp()));
 }
 
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return ScreenUtilInit(
-        designSize: const Size(360, 694),
+        designSize: const Size(393, 852),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {

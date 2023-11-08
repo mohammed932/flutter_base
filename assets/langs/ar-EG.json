@@ -1,4 +1,10 @@
 {
-      "welcome_ogee":"أهلاً بك في أوجى",
-      "welcome_msg":"الأداة المثالية لبيت أحلامك."
+  "welcome_ogee": "أهلاً بك في أوجى",
+  "welcome_msg": "الأداة المثالية لبيت أحلامك.",
+  "sign_up": "سجل الان",
+  "already_have_account": "هل لديك حساب",
+  "oR": "أو",
+  "continue_guest": "الاستمرار كضيف",
+  "privacy_policy_warning": "بتسجيل الدخول، فإنك توافق على \n الشروط والأحكام / سياسة الخصوصية",
+  "choose_language":"اختر لغتك"
 }

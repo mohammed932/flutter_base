@@ -1,6 +1,10 @@
 {
-  
-  "welcome_ogee":"Welcome to Ogee",
-  "welcome_msg":"The perfect tool for your dream home."
-
+  "welcome_ogee": "Welcome to Ogee",
+  "welcome_msg": "The perfect tool for your\n dream home.",
+  "sign_up": "Sign Up",
+  "already_have_account": "Already Have An Account",
+  "oR":"oR",
+  "continue_guest":"Continue as a Guest",
+  "privacy_policy_warning":"by signing in, you agree to Ogee decor\n Termes and conditions / Privacy policy",
+  "choose_language":"Choose Your Language"
 }

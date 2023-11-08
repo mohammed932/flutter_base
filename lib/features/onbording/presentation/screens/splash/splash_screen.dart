@@ -16,6 +16,10 @@ class SplashScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(
+                  AppImages.splashVector,
+                )),
                 gradient: LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment(0.8, 1),
@@ -25,8 +29,15 @@ class SplashScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              child: Image.asset(
-                AppImages.splashVector,
+              child: Column(
+                children: [
+                  Spacer(flex: 5),
+                  AppText(
+                    title: "V.2",
+                    style: AppTextStyle.offwhite2W400F20,
+                  ),
+                  Spacer(),
+                ],
               ),
             ),
             Container(

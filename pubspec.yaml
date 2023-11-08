@@ -51,6 +51,9 @@ dependencies:
   pretty_dio_logger: ^1.3.1
   flutter_screenutil: ^5.9.0
   easy_localization: ^3.0.3
+  font_awesome_flutter: ^10.6.0
+  flutter_svg: ^2.0.9
+  gap: ^3.0.1
 
 
 dev_dependencies:

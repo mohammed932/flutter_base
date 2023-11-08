@@ -7,4 +7,5 @@ class AppImages {
   static const String darkLogo = "${imagesPath}darkLogo.png";
   static const String logo = "${imagesPath}logo.png";
   static const String splashVector = "${imagesPath}splashVector.png";
+  static const String onbordingImagI = "${imagesPath}onbordingImagI.png";
 }
