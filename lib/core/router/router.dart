@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:interview_test/features/onbording/presentation/screens/onbording/onborading.imports.dart';
+import 'package:interview_test/features/onbording/presentation/screens/splash/splash.imports.dart';
 import 'package:interview_test/features/products/domain/entities/product.dart';
 import 'package:interview_test/features/products/presentation/screens/bottom_tabs/bottom_tabs.imports.dart';
 import 'package:interview_test/features/products/presentation/screens/gift_tabs/tabs.imports.dart';
@@ -15,8 +17,12 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
         AutoRoute(
-          page: ProductsRoute.page,
+          page: SplashRoute.page,
           initial: true,
+        ),
+        AutoRoute(
+          page: OnBordingRoute.page,
+          path: '/on_bording',
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,

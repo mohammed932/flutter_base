@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const GiftTabsScreen(),
       );
     },
+    OnBordingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnBordingScreen(),
+      );
+    },
     ProductDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<ProductDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -65,6 +71,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SentScreen(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashScreen(),
       );
     },
   };
@@ -108,6 +120,20 @@ class GiftTabsRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'GiftTabsRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnBordingScreen]
+class OnBordingRoute extends PageRouteInfo<void> {
+  const OnBordingRoute({List<PageRouteInfo>? children})
+      : super(
+          OnBordingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnBordingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
@@ -202,6 +228,20 @@ class SentRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SplashScreen]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SplashRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
