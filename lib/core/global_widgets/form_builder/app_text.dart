@@ -65,9 +65,12 @@ class AppText extends StatelessWidget {
         return Theme.of(ctx).custom.primaryGreenW400F20;
       case AppTextStyle.grayW400F16:
         return Theme.of(ctx).custom.grayW400F16;
-
+      case AppTextStyle.primaryGreenW500F16:
+        return Theme.of(ctx).custom.primaryGreenW500F16;
       case AppTextStyle.primaryGreenW400F24:
         return Theme.of(ctx).custom.primaryGreenW400F24;
+      case AppTextStyle.darkGreenW400F20:
+        return Theme.of(ctx).custom.darkGreenW400F20;
 
       default:
         return Theme.of(ctx).custom.blackW500F10;

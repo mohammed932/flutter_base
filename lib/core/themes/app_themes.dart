@@ -6,7 +6,7 @@ import 'app_colors.dart';
 abstract class AppThemes {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
-    scaffoldBackgroundColor: background,
+    scaffoldBackgroundColor: AppColors.offWhite,
     canvasColor: Colors.white,
     primaryColor: AppColors.primaryGreen,
     appBarTheme: const AppBarTheme(
@@ -16,9 +16,7 @@ abstract class AppThemes {
       systemOverlayStyle:
           SystemUiOverlayStyle(statusBarColor: AppColors.offWhite),
     ),
-    bottomAppBarTheme:
-        const BottomAppBarTheme(color: AppColors.offWhite),
-    
+    bottomAppBarTheme: const BottomAppBarTheme(color: AppColors.offWhite),
   );
   static ThemeData darkTheme = ThemeData(
     brightness: Brightness.dark,
@@ -31,6 +29,5 @@ abstract class AppThemes {
         .copyWith(background: AppColors.black),
   );
 
-  static const background = Color(0xffFAF9F4);
   static const tabBarShadow = Color.fromARGB(12, 0, 0, 0);
 }

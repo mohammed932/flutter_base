@@ -9,20 +9,23 @@ class IconWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: iconConfig.onTap,
-      child: iconConfig.name.endsWith(".svg")
-          ? SvgPicture.asset(
-              iconConfig.name,
-              color: iconConfig.color,
-              height: iconConfig.height,
-              width: iconConfig.width,
-            )
-          : Image.asset(
-              iconConfig.name,
-              color: iconConfig.color,
-              height: iconConfig.height,
-            ),
+    return Container(
+      padding: iconConfig.padding,
+      child: InkWell(
+        onTap: iconConfig.onTap,
+        child: iconConfig.name.endsWith(".svg")
+            ? SvgPicture.asset(
+                iconConfig.name,
+                color: iconConfig.color,
+                height: iconConfig.height,
+                width: iconConfig.width,
+              )
+            : Image.asset(
+                iconConfig.name,
+                color: iconConfig.color,
+                height: iconConfig.height,
+              ),
+      ),
     );
   }
 }

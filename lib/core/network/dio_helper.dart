@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:interview_test/core/errors/exception.dart';
 import 'package:interview_test/core/network/api_strings.dart';
@@ -9,9 +10,10 @@ class DioHelper implements BaseNetwork {
   final Dio dio;
   DioHelper({required this.dio});
   @override
-  Future get(String endPoint) async {
+  Future get(String endPoint, {Map<String, dynamic>? queryParameters}) async {
     try {
-      final response = await dio.get(ApiStrings.baseUrl + endPoint);
+      final response = await dio.get(ApiStrings.baseUrl + endPoint,
+          queryParameters: queryParameters);
 
       return response.data;
     } on DioException catch (e) {
@@ -41,8 +43,14 @@ class DioHelper implements BaseNetwork {
   }
 
   @override
-  Future post(String endPoint) {
-    throw UnimplementedError();
+  Future post(String endPoint, {Map<String, dynamic>? data}) async {
+    try {
+      final response = await dio.get(ApiStrings.baseUrl + endPoint, data: data);
+
+      return response.data;
+    } on DioException catch (e) {
+      handleDioErrors(e);
+    }
   }
 
   @override

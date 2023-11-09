@@ -194,12 +194,14 @@ class IconConfig {
   final double? height;
   final Color? color;
   final VoidCallback? onTap;
+  final EdgeInsets? padding;
   IconConfig({
     required this.name,
     this.height,
     this.width,
     this.color,
     this.onTap,
+    this.padding,
   });
 }
 

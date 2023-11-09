@@ -1,0 +1,10 @@
+<svg width="33" height="32" viewBox="0 0 33 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="keyboard_backspace">
+<mask id="mask0_868_3783" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="33" height="32">
+<rect id="Bounding box" x="0.781982" width="32" height="32" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_868_3783)">
+<path id="keyboard_backspace_2" d="M12.782 24L4.78198 16L12.782 8L14.6486 9.86667L9.84865 14.6667H28.782V17.3333H9.84865L14.6486 22.1333L12.782 24Z" fill="#054D3E"/>
+</g>
+</g>
+</svg>

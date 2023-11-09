@@ -12,7 +12,7 @@ class OnBordingScreen extends StatelessWidget {
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             image: DecorationImage(
-                fit: BoxFit.cover,
+                fit: BoxFit.fill,
                 image: AssetImage(
                   AppImages.onbordingImagI,
                 ))),
@@ -56,7 +56,9 @@ class OnBordingScreen extends StatelessWidget {
               ),
               Gap(16.h),
               AppButton.basic(
-                onTap: () {},
+                onTap: () {
+                  context.router.push(LoginRoute());
+                },
                 title: tr(LocaleKeys.already_have_account),
                 appButtonConfig: AppButtonConfig(
                   padding: EdgeInsets.all(10),
@@ -65,22 +67,7 @@ class OnBordingScreen extends StatelessWidget {
                 ),
               ),
               Gap(16.h),
-              Container(
-                width: 345.w,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    CustomLine(),
-                    Spacer(),
-                    Container(
-                        child: AppText(
-                            title: tr(LocaleKeys.oR),
-                            style: AppTextStyle.offwhite2W400F20)),
-                    Spacer(),
-                    CustomLine(),
-                  ],
-                ),
-              ),
+              ScreenSeparator(),
               Gap(16.h),
               Container(
                 width: 345.w,
@@ -88,7 +75,7 @@ class OnBordingScreen extends StatelessWidget {
                 child: AppText(
                   title: tr(LocaleKeys.privacy_policy_warning),
                   style: AppTextStyle.grayW400F16,
-                ),
+                )..modifyStyle(modifiedStyle: TextStyle(height: 1.6)),
               ),
             ],
           ),

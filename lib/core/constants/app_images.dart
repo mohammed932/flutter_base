@@ -8,4 +8,6 @@ class AppImages {
   static const String logo = "${imagesPath}logo.png";
   static const String splashVector = "${imagesPath}splashVector.png";
   static const String onbordingImagI = "${imagesPath}onbordingImagI.png";
+  static const String onbordingImagII = "${imagesPath}onbordingImagII.png";
+  static const String onbordingImagIII = "${imagesPath}onbordingImagIII.png";
 }

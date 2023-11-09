@@ -7,9 +7,13 @@ enum AppTextStyle {
   offWhite2W400F32,
 
   // Primary Green  //
+  primaryGreenW500F16,
   primaryGreenW400F20,
   primaryGreenW400F24,
   primaryGreenW400F30,
+
+//DARK GREEN //
+  darkGreenW400F20,
 
   //gray //
   grayW400F16

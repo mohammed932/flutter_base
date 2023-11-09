@@ -8,6 +8,8 @@ import 'package:interview_test/features/products/presentation/screens/gift_tabs/
 import 'package:interview_test/features/products/presentation/screens/product_details/product_details.imports.dart';
 import 'package:interview_test/features/products/presentation/screens/products/products.imports.dart';
 
+import '../../features/Authentication/presentation/screens/login/login.imports.dart';
+
 part 'router.gr.dart';
 
 @AutoRouterConfig(
@@ -23,6 +25,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: OnBordingRoute.page,
           path: '/on_bording',
+        ),
+        AutoRoute(
+          page: LoginRoute.page,
+          path: '/login',
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,

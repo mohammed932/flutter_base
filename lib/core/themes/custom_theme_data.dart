@@ -10,6 +10,8 @@ abstract class ICustomThemeData {
   TextStyle get primaryGreenW400F24;
   TextStyle get primaryGreenW400F30;
   TextStyle get grayW400F16;
+  TextStyle get primaryGreenW500F16;
+  TextStyle get darkGreenW400F20;
 }
 
 class CustomLightTheme implements ICustomThemeData {
@@ -46,6 +48,12 @@ class CustomLightTheme implements ICustomThemeData {
         fontWeight: FontWeight.w400,
         fontSize: 20.sp,
       );
+  @override
+  TextStyle get primaryGreenW500F16 => TextStyle(
+        color: AppColors.primaryGreen,
+        fontWeight: FontWeight.w500,
+        fontSize: 16.sp,
+      );
   TextStyle get primaryGreenW400F24 => TextStyle(
         color: AppColors.primaryGreen,
         fontWeight: FontWeight.w400,
@@ -56,6 +64,14 @@ class CustomLightTheme implements ICustomThemeData {
         fontWeight: FontWeight.w400,
         fontSize: 30.sp,
       );
+
+  // Dark Green  //
+  TextStyle get darkGreenW400F20 => TextStyle(
+        color: AppColors.darkGreen,
+        fontWeight: FontWeight.w400,
+        fontSize: 20.sp,
+      );
+
   // GRAY  //
   TextStyle get grayW400F16 => TextStyle(
         color: AppColors.gray,
@@ -96,4 +112,12 @@ class CustomDarkTheme implements ICustomThemeData {
   @override
   // TODO: implement primaryGreenW400F24
   TextStyle get primaryGreenW400F24 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primaryGreenW500F16
+  TextStyle get primaryGreenW500F16 => throw UnimplementedError();
+
+  @override
+  // TODO: implement darkGreenW400F20
+  TextStyle get darkGreenW400F20 => throw UnimplementedError();
 }
