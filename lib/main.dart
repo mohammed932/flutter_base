@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:interview_test/core/router/router.dart';
-import 'package:interview_test/core/themes/app_themes.dart';
 import 'package:interview_test/injection.dart';
+
+import 'core/themes/app_themes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   configureDependencies();
   runApp(EasyLocalization(
       path: "assets/langs",

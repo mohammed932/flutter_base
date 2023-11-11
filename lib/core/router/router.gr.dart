@@ -27,6 +27,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ContactUsScreen(),
       );
     },
+    ForgetPasswordRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ForgetPasswordScreen(),
+      );
+    },
     GiftTabsRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -39,10 +45,24 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LoginScreen(),
       );
     },
+    NewPasswordRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const NewPasswordScreen(),
+      );
+    },
     OnBordingRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OnBordingScreen(),
+      );
+    },
+    OtpRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<OtpRouteArgs>(orElse: () => const OtpRouteArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: OtpScreen(key: args.key),
       );
     },
     ProductDetailsRoute.name: (routeData) {
@@ -77,6 +97,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SentScreen(),
+      );
+    },
+    SignupRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SignupScreen(),
       );
     },
     SplashRoute.name: (routeData) {
@@ -117,6 +143,20 @@ class ContactUsRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [ForgetPasswordScreen]
+class ForgetPasswordRoute extends PageRouteInfo<void> {
+  const ForgetPasswordRoute({List<PageRouteInfo>? children})
+      : super(
+          ForgetPasswordRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ForgetPasswordRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [GiftTabsScreen]
 class GiftTabsRoute extends PageRouteInfo<void> {
   const GiftTabsRoute({List<PageRouteInfo>? children})
@@ -145,6 +185,20 @@ class LoginRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [NewPasswordScreen]
+class NewPasswordRoute extends PageRouteInfo<void> {
+  const NewPasswordRoute({List<PageRouteInfo>? children})
+      : super(
+          NewPasswordRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'NewPasswordRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [OnBordingScreen]
 class OnBordingRoute extends PageRouteInfo<void> {
   const OnBordingRoute({List<PageRouteInfo>? children})
@@ -156,6 +210,34 @@ class OnBordingRoute extends PageRouteInfo<void> {
   static const String name = 'OnBordingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OtpScreen]
+class OtpRoute extends PageRouteInfo<OtpRouteArgs> {
+  OtpRoute({
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          OtpRoute.name,
+          args: OtpRouteArgs(key: key),
+          initialChildren: children,
+        );
+
+  static const String name = 'OtpRoute';
+
+  static const PageInfo<OtpRouteArgs> page = PageInfo<OtpRouteArgs>(name);
+}
+
+class OtpRouteArgs {
+  const OtpRouteArgs({this.key});
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'OtpRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -248,6 +330,20 @@ class SentRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'SentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SignupScreen]
+class SignupRoute extends PageRouteInfo<void> {
+  const SignupRoute({List<PageRouteInfo>? children})
+      : super(
+          SignupRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SignupRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

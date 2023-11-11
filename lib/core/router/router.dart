@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:interview_test/features/authentication/presentation/screens/new-password/new_password.imports.dart';
 import 'package:interview_test/features/onbording/presentation/screens/onbording/onborading.imports.dart';
 import 'package:interview_test/features/onbording/presentation/screens/splash/splash.imports.dart';
 import 'package:interview_test/features/products/domain/entities/product.dart';
@@ -9,6 +10,9 @@ import 'package:interview_test/features/products/presentation/screens/product_de
 import 'package:interview_test/features/products/presentation/screens/products/products.imports.dart';
 
 import '../../features/Authentication/presentation/screens/login/login.imports.dart';
+import '../../features/authentication/presentation/screens/forget-password/forget.imports.dart';
+import '../../features/authentication/presentation/screens/otp/otp.imports.dart';
+import '../../features/authentication/presentation/screens/signup/signup.imports.dart';
 
 part 'router.gr.dart';
 
@@ -29,6 +33,22 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: LoginRoute.page,
           path: '/login',
+        ),
+        AutoRoute(
+          page: SignupRoute.page,
+          path: '/signup',
+        ),
+        AutoRoute(
+          page: ForgetPasswordRoute.page,
+          path: "/forget-password",
+        ),
+        AutoRoute(
+          page: OtpRoute.page,
+          path: "/otp-code",
+        ),
+        AutoRoute(
+          page: NewPasswordRoute.page,
+          path: "/new-password",
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,

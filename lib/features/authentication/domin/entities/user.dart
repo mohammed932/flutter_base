@@ -18,3 +18,14 @@ class User extends Equatable {
   @override
   List<Object?> get props => [id, name, image, email, phoneNumber];
 }
+
+// login_params.dart
+class LoginParams extends Equatable {
+  final String phone;
+  final String password;
+
+  LoginParams({required this.phone, required this.password});
+
+  @override
+  List<Object?> get props => [this.phone, this.password];
+}

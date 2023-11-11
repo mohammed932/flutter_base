@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:interview_test/features/authentication/data/datasources/base_auth_datasource.dart';
 import 'package:interview_test/features/authentication/domin/entities/user.dart';
 import 'package:interview_test/features/authentication/domin/repositories/base_login_repository.dart';
-import 'package:interview_test/features/authentication/domin/usecases/login_usecase.dart';
 
 import '../../../../core/errors/exception.dart';
 import '../../../../core/errors/failure.dart';

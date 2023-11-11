@@ -110,7 +110,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: automaticallyImplyLeading,
       leading: getLeadingIcon(context),
       titleSpacing: automaticallyImplyLeading ? 32 : 16.w,
-      backgroundColor: bkColor ?? AppColors.offWhite2,
+      backgroundColor: bkColor ?? AppColors.offWhite,
     );
   }
 

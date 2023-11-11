@@ -29,5 +29,6 @@ abstract class  LocaleKeys {
   static const new_password = 'new_password';
   static const confirm = 'confirm';
   static const enter_phone_or_email = 'enter_phone_or_email';
+  static const user_name = 'user_name';
 
 }

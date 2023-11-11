@@ -26,5 +26,7 @@
   "add_new_password": "Add new password",
   "new_password":"New Password",
   "confirm":"Confirm",
-  "enter_phone_or_email":"Enter your email or phone number"
+  "enter_phone_or_email":"Enter your email or phone number",
+  "user_name":"User name"
+  
 }

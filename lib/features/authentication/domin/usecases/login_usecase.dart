@@ -13,11 +13,3 @@ class LoginUsecase extends BaseUseCase<User, LoginParams> {
     return await repository.login(params);
   }
 }
-
-// login_params.dart
-class LoginParams {
-  final String phone;
-  final String password;
-
-  LoginParams({required this.phone, required this.password});
-}

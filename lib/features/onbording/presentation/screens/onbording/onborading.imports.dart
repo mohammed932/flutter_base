@@ -15,4 +15,6 @@ import 'package:interview_test/features/onbording/presentation/screens/onbording
 import 'package:interview_test/features/onbording/presentation/screens/onbording/widgets/custom_line.dart';
 import 'package:interview_test/generated/translations.g.dart';
 
+import '../../../../../core/global_widgets/privacy_warning.dart';
+
 part 'onborading_screen.dart';

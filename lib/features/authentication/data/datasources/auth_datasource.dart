@@ -2,7 +2,6 @@ import 'package:interview_test/features/authentication/data/datasources/base_aut
 import 'package:interview_test/features/authentication/domin/entities/user.dart';
 
 import '../../../../core/network/network_interface.dart';
-import '../../domin/usecases/login_usecase.dart';
 
 class AutDataSource implements BaseAuthDataSource {
   final BaseNetwork network;

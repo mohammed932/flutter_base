@@ -1,15 +1,15 @@
-part of 'login.imports.dart';
+part of 'signup.imports.dart';
 
 @RoutePage()
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.offWhite2,
       appBar: DefaultAppBar.normalAppBar(
-          title: LocaleKeys.log_in, automaticallyImplyLeading: false),
+          title: LocaleKeys.sign_up, automaticallyImplyLeading: false),
       body: Padding(
         padding: EdgeInsets.symmetric(
           vertical: 24.h,
@@ -18,7 +18,17 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           children: [
             AppTextFormField(
-              labelText: LocaleKeys.email_or_phone,
+              labelText: LocaleKeys.user_name,
+              hintText: tr(LocaleKeys.enter_phone_or_email),
+            ),
+            Gap(16.h),
+            AppTextFormField(
+              labelText: LocaleKeys.phone_number,
+              hintText: tr(LocaleKeys.enter_phone_or_email),
+            ),
+            Gap(16.h),
+            AppTextFormField(
+              labelText: LocaleKeys.email,
               hintText: tr(LocaleKeys.enter_phone_or_email),
             ),
             Gap(16.h),
@@ -35,17 +45,10 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Gap(16.h),
-            InkWell(
-              onTap: () => context.router.push(ForgetPasswordRoute()),
-              child: AppText(
-                  title: tr(LocaleKeys.forget_password),
-                  style: AppTextStyle.darkGreenW400F20),
-            ),
-            Gap(16.h),
+            Gap(40.h),
             AppButton.basic(
               onTap: () {},
-              title: tr(LocaleKeys.log_in),
+              title: tr(LocaleKeys.sign_up),
               appButtonConfig: AppButtonConfig(
                 padding: EdgeInsets.all(10),
               ),
@@ -58,17 +61,17 @@ class LoginScreen extends StatelessWidget {
             Gap(16.h),
             AppButton.basic(
               onTap: () {
-                context.router.push(SignupRoute());
+                context.router.replace(LoginRoute());
               },
-              title: tr(LocaleKeys.dont_have_account) +
-                  " " +
-                  tr(LocaleKeys.sign_up),
+              title: tr(LocaleKeys.already_have_account),
               appButtonConfig: AppButtonConfig(
                 padding: EdgeInsets.all(10),
                 backgroundColor: AppColors.white,
                 textStyle: AppTextStyle.primaryGreenW400F20,
               ),
             ),
+            Gap(16.h),
+            PrivacyWarning(),
           ],
         ),
       ),

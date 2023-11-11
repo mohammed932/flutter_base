@@ -8,14 +8,10 @@ class OnBordingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(
-                  AppImages.onbordingImagI,
-                ))),
+                image: AssetImage(AppImages.onbordingImagII))),
         child: Padding(
           padding: EdgeInsets.only(
             left: 16.w,
@@ -48,7 +44,9 @@ class OnBordingScreen extends StatelessWidget {
                   style: AppTextStyle.offwhite2W400F20),
               Spacer(),
               AppButton.basic(
-                onTap: () {},
+                onTap: () {
+                  context.router.push(SignupRoute());
+                },
                 title: tr(LocaleKeys.sign_up),
                 appButtonConfig: AppButtonConfig(
                   padding: EdgeInsets.all(10),
@@ -69,14 +67,7 @@ class OnBordingScreen extends StatelessWidget {
               Gap(16.h),
               ScreenSeparator(),
               Gap(16.h),
-              Container(
-                width: 345.w,
-                alignment: Alignment.center,
-                child: AppText(
-                  title: tr(LocaleKeys.privacy_policy_warning),
-                  style: AppTextStyle.grayW400F16,
-                )..modifyStyle(modifiedStyle: TextStyle(height: 1.6)),
-              ),
+              PrivacyWarning(),
             ],
           ),
         ),
