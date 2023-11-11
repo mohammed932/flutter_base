@@ -15,6 +15,7 @@ class AppButton extends StatelessWidget {
   final FabIconConfig? fabIconConfig;
   final AppButtonConfig? appButtonConfig;
   final bool haveShadow;
+  final bool isLoading;
   const AppButton._({
     Key? key,
     required this.onTap,
@@ -24,6 +25,7 @@ class AppButton extends StatelessWidget {
     this.iconConfig,
     this.haveShadow = false,
     this.isFlatButton = false,
+    this.isLoading = false,
   }) : super(key: key);
 
   factory AppButton.basic({
@@ -32,6 +34,7 @@ class AppButton extends StatelessWidget {
     AppButtonConfig? appButtonConfig,
     bool haveShadow = false,
     IconConfig? iconConfig,
+    bool? isLoading,
   }) {
     return AppButton._(
       title: title,
@@ -39,6 +42,7 @@ class AppButton extends StatelessWidget {
       haveShadow: haveShadow,
       appButtonConfig: appButtonConfig,
       iconConfig: iconConfig,
+      isLoading: isLoading ?? false,
     );
   }
 
@@ -110,24 +114,27 @@ class AppButton extends StatelessWidget {
             : null,
       ),
       child: ElevatedButton(
-        onPressed: onTap,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                showProperIconWidget(),
-                if (title != null && iconConfig != null) SizedBox(width: 5),
-                if (title != null)
-                  AppText(
-                      title: title!,
-                      style: appButtonConfig?.textStyle ??
-                          AppTextStyle.offwhite2W400F20),
-              ],
-            ),
-          ],
-        ),
+        onPressed: isLoading ? null : onTap,
+        child: isLoading
+            ? CircularProgressIndicator.adaptive()
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      showProperIconWidget(),
+                      if (title != null && iconConfig != null)
+                        SizedBox(width: 5),
+                      if (title != null)
+                        AppText(
+                            title: title!,
+                            style: appButtonConfig?.textStyle ??
+                                AppTextStyle.offwhite2W400F20),
+                    ],
+                  ),
+                ],
+              ),
         style: ElevatedButton.styleFrom(
           backgroundColor: getBackgroundColor(),
           padding: appButtonConfig?.padding ?? _scaledPadding(context),

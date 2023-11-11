@@ -25,3 +25,26 @@ class AutDataSource implements BaseAuthDataSource {
     }
   }
 }
+
+class AutDataSourceByGraphQl implements BaseAuthDataSource {
+  final BaseNetwork network;
+  AutDataSourceByGraphQl({required this.network});
+
+  @override
+  Future<User> Login(LoginParams loginParams) async {
+    try {
+      // final response = await network.post(ApiStrings.login,
+      //     data: {"phone": loginParams.phone, "password": loginParams.password});
+      await Future.delayed(Duration(seconds: 10));
+
+      User user = User(
+        phoneNumber: "1111",
+        email: "E@e.com",
+        name: "Mohamed Adel",
+      );
+      return user;
+    } catch (e) {
+      rethrow;
+    }
+  }
+}
