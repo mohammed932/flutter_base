@@ -6,9 +6,9 @@
   "oR": "أو",
   "continue_guest": "الاستمرار كضيف",
   "privacy_policy_warning": "بتسجيل الدخول، فإنك توافق على \n الشروط والأحكام / سياسة الخصوصية",
-  "choose_language":"اختر لغتك",
+  "choose_language": "اختر لغتك",
   "log_in": "تسجيل الدخول",
-  "email_or_phone":"البريد الإلكتروني / رقم الهاتف",
+  "email_or_phone": "البريد الإلكتروني / رقم الهاتف",
   "email": "البريد الإلكتروني",
   "phone_number": "رقم الهاتف",
   "password": "كلمة المرور",
@@ -24,8 +24,12 @@
   "send_again": "أعد الإرسال",
   "sec": "ثانيه",
   "add_new_password": "إضافة كلمة مرور جديدة",
-  "new_password":"كلمة المرور الجديدة",
-  "confirm":"تأكيد",
-  "enter_phone_or_email":"ادخل  البريد الإلكتروني او رقم الهاتف",
-  "user_name":"اسم المستخدم"
+  "new_password": "كلمة المرور الجديدة",
+  "confirm": "تأكيد",
+  "enter_phone_or_email": "ادخل  البريد الإلكتروني او رقم الهاتف",
+  "user_name": "اسم المستخدم",
+  "field_required": "حقل مطلوب",
+  "invalid_email": "بريد إلكتروني غير صالح",
+  "invalid_number": "رقم غير صالح",
+  "invalid_password":"يجب ان تتكون كلمة المرور من 6 احرف او ارقام علي الاقل"
 }

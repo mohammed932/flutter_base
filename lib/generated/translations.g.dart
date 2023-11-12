@@ -30,5 +30,9 @@ abstract class  LocaleKeys {
   static const confirm = 'confirm';
   static const enter_phone_or_email = 'enter_phone_or_email';
   static const user_name = 'user_name';
+  static const field_required = 'field_required';
+  static const invalid_email = 'invalid_email';
+  static const invalid_number = 'invalid_number';
+  static const invalid_password = 'invalid_password';
 
 }

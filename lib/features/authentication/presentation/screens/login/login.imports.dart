@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:interview_test/core/extentions/string_extensions.dart';
 import 'package:interview_test/core/router/router.dart';
 import 'package:interview_test/features/authentication/presentation/screens/login/bloc/login_bloc.dart';
 

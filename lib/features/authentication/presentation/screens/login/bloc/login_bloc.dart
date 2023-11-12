@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:interview_test/core/constants/enums.dart';
+import 'package:interview_test/core/extentions/string_extensions.dart';
 import 'package:interview_test/features/authentication/domin/entities/user.dart';
 
 import '../../../../../../core/errors/failure.dart';
@@ -16,6 +17,7 @@ abstract class ILoginBloc extends Bloc<LoginEvent, LoginState> {
   ILoginBloc(super.initialState);
   TextEditingController get phoneContoller;
   TextEditingController get passwordContoller;
+  bool validator(BuildContext context);
 }
 
 class LoginBloc extends ILoginBloc {
@@ -29,8 +31,35 @@ class LoginBloc extends ILoginBloc {
       }
     });
   }
+  bool validator(BuildContext context) {
+    if (phoneContoller.text.isNullOrEmpty(context) != null) {
+      emit(state.copyWith(
+          errorMessage: phoneContoller.text.isNullOrEmpty(context)!));
+      return false;
+    }
+    if (phoneContoller.text.isValidNumber(context) != null) {
+      emit(state.copyWith(
+          errorMessage: phoneContoller.text.isValidNumber(context)!));
+      return false;
+    }
+    if (passwordContoller.text.isNullOrEmpty(context) != null) {
+      emit(state.copyWith(
+          errorMessage: passwordContoller.text.isNullOrEmpty(context)!));
+      return false;
+    }
+    if (passwordContoller.text.isValidNumber(context) != null) {
+      emit(state.copyWith(
+          errorMessage: passwordContoller.text.isValidNumber(context)!));
+      return false;
+    }
+    return true;
+  }
+
   Future login() async {
-    emit(state.copyWith(loading: RequestState.LOADING));
+    emit(state.copyWith(
+      loading: RequestState.LOADING,
+      errorMessage: '',
+    ));
     Either<Failure, User> response = await loginUsecase.call(LoginParams(
         phone: phoneContoller.text.trim(),
         password: passwordContoller.text.trim()));

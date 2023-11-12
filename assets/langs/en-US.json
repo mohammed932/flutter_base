@@ -27,6 +27,10 @@
   "new_password":"New Password",
   "confirm":"Confirm",
   "enter_phone_or_email":"Enter your email or phone number",
-  "user_name":"User name"
+  "user_name":"User name",
+  "field_required":"field required",
+  "invalid_email":"invalid email",
+  "invalid_number":"invalid number",
+  "invalid_password":"Password lenght must be 6 or greater"
   
 }
