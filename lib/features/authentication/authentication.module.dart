@@ -27,6 +27,6 @@ abstract class AuthDiModule {
   BaseUseCase<User, LoginParams> get getLoginUsecase =>
       LoginUsecase(repository: baseAuthRepository);
   // Bloc
-  @lazySingleton
+  @injectable
   ILoginBloc get loginBloc => LoginBloc(loginUsecase: getLoginUsecase);
 }

@@ -15,7 +15,7 @@ class SignupScreen extends StatelessWidget {
           vertical: 24.h,
           horizontal: 16.w,
         ),
-        child: Column(
+        child: ListView(
           children: [
             AppTextFormField(
               labelText: LocaleKeys.user_name,

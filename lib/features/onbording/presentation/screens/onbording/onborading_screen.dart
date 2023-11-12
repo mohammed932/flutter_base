@@ -66,6 +66,17 @@ class OnBordingScreen extends StatelessWidget {
               ),
               Gap(16.h),
               ScreenSeparator(),
+              AppButton.basic(
+                onTap: () {
+                  context.router.push(SignupRoute());
+                },
+                title: tr(LocaleKeys.continue_guest),
+                appButtonConfig: AppButtonConfig(
+                  padding: EdgeInsets.all(10),
+                  backgroundColor: AppColors.offWhite2,
+                  textStyle: AppTextStyle.primaryGreenW400F20,
+                ),
+              ),
               Gap(16.h),
               PrivacyWarning(),
             ],

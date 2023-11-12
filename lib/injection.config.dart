@@ -54,7 +54,7 @@ extension GetItInjectableX on _i1.GetIt {
         () => authDiModule.getLoginUsecase);
     gh.lazySingleton<_i8.BaseUseCase<List<_i10.Product>, _i8.NoParams>>(
         () => productsDiModule.getProductsUsecase);
-    gh.lazySingleton<_i11.ILoginBloc>(() => authDiModule.loginBloc);
+    gh.factory<_i11.ILoginBloc>(() => authDiModule.loginBloc);
     gh.factory<_i12.IProductsBloc>(() => productsDiModule.productsBloc);
     return this;
   }
