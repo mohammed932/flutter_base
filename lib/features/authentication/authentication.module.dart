@@ -9,6 +9,7 @@ import 'package:interview_test/features/authentication/presentation/screens/logi
 import '../../core/network/network_interface.dart';
 import '../../core/usecase/base_usecase.dart';
 import '../../injection.dart';
+import 'data/models/user_model.dart';
 import 'data/repositories/auth_repository.dart';
 
 @module
@@ -24,7 +25,7 @@ abstract class AuthDiModule {
       AuthRepository(authDataSource: authDataSource);
   // UseCase
   @lazySingleton
-  BaseUseCase<User, LoginParams> get getLoginUsecase =>
+  BaseUseCase<UserModel, LoginParams> get getLoginUsecase =>
       LoginUsecase(repository: baseAuthRepository);
   // Bloc
   @injectable
