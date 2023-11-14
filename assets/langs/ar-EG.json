@@ -31,5 +31,22 @@
   "field_required": "حقل مطلوب",
   "invalid_email": "بريد إلكتروني غير صالح",
   "invalid_number": "رقم غير صالح",
-  "invalid_password":"يجب ان تتكون كلمة المرور من 6 احرف او ارقام علي الاقل"
+  "invalid_password": "يجب ان تتكون كلمة المرور من 6 احرف او ارقام علي الاقل",
+  "calculate_unit": "حساب الوحدة",
+  "calculate_des": "من خلال بضع نقرات، حساب تكلفة التشطيب لوحدتك.",
+  "view_gallery": "عرض الصور",
+  "view_gallery_des": "استلهم من مكتبة الصور المذهلة لأي غرفة بأي أسلوب.",
+  "generate_by_ai": "إنشاء مساحتك بواسطة الذكاء الاصطناعي",
+  "new_feature": "جديد",
+  "design_your_space": "قم بتصميم مساحتك",
+  "design_des": "دعنا نقوم بتصميم مساحتك مع فريق Ogee!",
+  "home": "الرئيسية",
+  "favorites": "المفضلة",
+  "projects": "المشاريع",
+  "profile": "الملف الشخصي",
+  "apply_now":"قدم الآن",
+  "supplires_title": "شركات الموردين المتقدمين",
+  "supplires_desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+  "finishing_title": "شركات التشطيب المتقدمه",
+  "finishing_desc": "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."
 }

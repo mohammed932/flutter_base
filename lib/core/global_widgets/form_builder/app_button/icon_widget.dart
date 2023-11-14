@@ -10,6 +10,11 @@ class IconWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: iconConfig.bkcolor,
+        shape:
+            iconConfig.isCircle == true ? BoxShape.circle : BoxShape.rectangle,
+      ),
       padding: iconConfig.padding,
       child: InkWell(
         onTap: iconConfig.onTap,

@@ -1,4 +1,4 @@
-part of 'bottom_tabs.imports.dart';
+part of 'profile.imports.dart';
 
 @RoutePage()
 class ProfileScreen extends StatelessWidget {
@@ -6,8 +6,6 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("ProfileScreen"),
-    );
+    return const Placeholder();
   }
 }

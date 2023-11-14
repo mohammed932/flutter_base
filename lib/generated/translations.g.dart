@@ -34,5 +34,22 @@ abstract class  LocaleKeys {
   static const invalid_email = 'invalid_email';
   static const invalid_number = 'invalid_number';
   static const invalid_password = 'invalid_password';
+  static const calculate_unit = 'calculate_unit';
+  static const calculate_des = 'calculate_des';
+  static const view_gallery = 'view_gallery';
+  static const view_gallery_des = 'view_gallery_des';
+  static const generate_by_ai = 'generate_by_ai';
+  static const new_feature = 'new_feature';
+  static const design_your_space = 'design_your_space';
+  static const design_des = 'design_des';
+  static const home = 'home';
+  static const favorites = 'favorites';
+  static const projects = 'projects';
+  static const profile = 'profile';
+  static const apply_now = 'apply_now';
+  static const supplires_title = 'supplires_title';
+  static const supplires_desc = 'supplires_desc';
+  static const finishing_title = 'finishing_title';
+  static const finishing_desc = 'finishing_desc';
 
 }

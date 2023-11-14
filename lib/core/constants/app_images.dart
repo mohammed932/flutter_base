@@ -10,4 +10,5 @@ class AppImages {
   //static const String onbordingImagI = "${imagesPath}onbordingImagI.png";
   static const String onbordingImagII = "${imagesPath}onbordingImagII.jpg";
   static const String onbordingImagIII = "${imagesPath}onbordingImagIII.jpg";
+  static const String sliderI = "${imagesPath}sliderI.jpg";
 }

@@ -68,7 +68,7 @@ class OnBordingScreen extends StatelessWidget {
               ScreenSeparator(),
               AppButton.basic(
                 onTap: () {
-                  context.router.push(SignupRoute());
+                  context.router.push(BottomTabsRoute());
                 },
                 title: tr(LocaleKeys.continue_guest),
                 appButtonConfig: AppButtonConfig(

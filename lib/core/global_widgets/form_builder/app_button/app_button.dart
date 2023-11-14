@@ -200,8 +200,10 @@ class IconConfig {
   final double? width;
   final double? height;
   final Color? color;
+  final Color? bkcolor;
   final VoidCallback? onTap;
   final EdgeInsets? padding;
+  final bool? isCircle;
   IconConfig({
     required this.name,
     this.height,
@@ -209,6 +211,8 @@ class IconConfig {
     this.color,
     this.onTap,
     this.padding,
+    this.bkcolor,
+    this.isCircle,
   });
 }
 

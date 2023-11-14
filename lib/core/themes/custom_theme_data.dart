@@ -13,6 +13,12 @@ abstract class ICustomThemeData {
   TextStyle get primaryGreenW500F16;
   TextStyle get darkGreenW400F20;
   TextStyle get redW400F16;
+  TextStyle get whiteW400F12;
+  TextStyle get whiteW400F18;
+  TextStyle get blackW400F12;
+  TextStyle get blackW400F18;
+  TextStyle get primaryGreenW400F12;
+  TextStyle get primaryGreenW400F18;
 }
 
 class CustomLightTheme implements ICustomThemeData {
@@ -22,6 +28,16 @@ class CustomLightTheme implements ICustomThemeData {
   @override
 
   //BLACK//
+  TextStyle get blackW400F18 => TextStyle(
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+        fontSize: 18.sp,
+      );
+  TextStyle get blackW400F12 => TextStyle(
+        color: AppColors.black,
+        fontWeight: FontWeight.w400,
+        fontSize: 12.sp,
+      );
   TextStyle get blackW500F10 => TextStyle(
         color: AppColors.black,
         fontWeight: FontWeight.w500,
@@ -48,6 +64,18 @@ class CustomLightTheme implements ICustomThemeData {
         color: AppColors.primaryGreen,
         fontWeight: FontWeight.w400,
         fontSize: 20.sp,
+      );
+  @override
+  TextStyle get primaryGreenW400F18 => TextStyle(
+        color: AppColors.primaryGreen,
+        fontWeight: FontWeight.w400,
+        fontSize: 18.sp,
+      );
+  @override
+  TextStyle get primaryGreenW400F12 => TextStyle(
+        color: AppColors.primaryGreen,
+        fontWeight: FontWeight.w400,
+        fontSize: 12.sp,
       );
   @override
   TextStyle get primaryGreenW500F16 => TextStyle(
@@ -87,6 +115,20 @@ class CustomLightTheme implements ICustomThemeData {
         color: AppColors.red,
         fontWeight: FontWeight.w400,
         fontSize: 16.sp,
+      );
+
+  @override
+  TextStyle get whiteW400F12 => TextStyle(
+        color: AppColors.white,
+        fontWeight: FontWeight.w400,
+        fontSize: 12.sp,
+      );
+
+  @override
+  TextStyle get whiteW400F18 => TextStyle(
+        color: AppColors.white,
+        fontWeight: FontWeight.w400,
+        fontSize: 18.sp,
       );
 }
 
@@ -133,4 +175,28 @@ class CustomDarkTheme implements ICustomThemeData {
 
   @override
   TextStyle get redW400F16 => throw UnimplementedError();
+
+  @override
+  // TODO: implement whiteW400F12
+  TextStyle get whiteW400F12 => throw UnimplementedError();
+
+  @override
+  // TODO: implement whiteW400F18
+  TextStyle get whiteW400F18 => throw UnimplementedError();
+
+  @override
+  // TODO: implement blackW400F12
+  TextStyle get blackW400F12 => throw UnimplementedError();
+
+  @override
+  // TODO: implement blackW400F18
+  TextStyle get blackW400F18 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primaryGreenW400F12
+  TextStyle get primaryGreenW400F12 => throw UnimplementedError();
+
+  @override
+  // TODO: implement primaryGreenW400F18
+  TextStyle get primaryGreenW400F18 => throw UnimplementedError();
 }
