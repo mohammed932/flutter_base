@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interview_test/core/global_widgets/form_builder/app_text.dart';
 
 import '../../../../../../core/constants/app_text_style_enum.dart';
+import '../../../../../../core/shared_widgets/form_builder/app_text.dart';
 import '../../../../../../core/themes/app_colors.dart';
 import '../../../../../../generated/translations.g.dart';
 

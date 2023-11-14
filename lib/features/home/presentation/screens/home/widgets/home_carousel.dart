@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../../core/constants/app_images.dart';
 import '../../../../../../core/constants/app_text_style_enum.dart';
-import '../../../../../../core/global_widgets/form_builder/app_text.dart';
+import '../../../../../../core/shared_widgets/form_builder/app_text.dart';
 import '../../../../../../core/themes/app_colors.dart';
 
 class HomeCarousel extends StatelessWidget {

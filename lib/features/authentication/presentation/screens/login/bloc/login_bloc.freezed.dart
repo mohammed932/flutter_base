@@ -281,7 +281,7 @@ abstract class _login implements LoginEvent {
 /// @nodoc
 mixin _$LoginState {
   RequestState get loading => throw _privateConstructorUsedError;
-  User? get loggedIn => throw _privateConstructorUsedError;
+  UserModel? get loggedIn => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -295,7 +295,9 @@ abstract class $LoginStateCopyWith<$Res> {
           LoginState value, $Res Function(LoginState) then) =
       _$LoginStateCopyWithImpl<$Res, LoginState>;
   @useResult
-  $Res call({RequestState loading, User? loggedIn, String errorMessage});
+  $Res call({RequestState loading, UserModel? loggedIn, String errorMessage});
+
+  $UserModelCopyWith<$Res>? get loggedIn;
 }
 
 /// @nodoc
@@ -323,12 +325,24 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
       loggedIn: freezed == loggedIn
           ? _value.loggedIn
           : loggedIn // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserModel?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $UserModelCopyWith<$Res>? get loggedIn {
+    if (_value.loggedIn == null) {
+      return null;
+    }
+
+    return $UserModelCopyWith<$Res>(_value.loggedIn!, (value) {
+      return _then(_value.copyWith(loggedIn: value) as $Val);
+    });
   }
 }
 
@@ -340,7 +354,10 @@ abstract class _$$LoginStateImplCopyWith<$Res>
       __$$LoginStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({RequestState loading, User? loggedIn, String errorMessage});
+  $Res call({RequestState loading, UserModel? loggedIn, String errorMessage});
+
+  @override
+  $UserModelCopyWith<$Res>? get loggedIn;
 }
 
 /// @nodoc
@@ -366,7 +383,7 @@ class __$$LoginStateImplCopyWithImpl<$Res>
       loggedIn: freezed == loggedIn
           ? _value.loggedIn
           : loggedIn // ignore: cast_nullable_to_non_nullable
-              as User?,
+              as UserModel?,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -387,7 +404,7 @@ class _$LoginStateImpl implements _LoginState {
   @JsonKey()
   final RequestState loading;
   @override
-  final User? loggedIn;
+  final UserModel? loggedIn;
   @override
   @JsonKey()
   final String errorMessage;
@@ -422,13 +439,13 @@ class _$LoginStateImpl implements _LoginState {
 abstract class _LoginState implements LoginState {
   const factory _LoginState(
       {final RequestState loading,
-      final User? loggedIn,
+      final UserModel? loggedIn,
       final String errorMessage}) = _$LoginStateImpl;
 
   @override
   RequestState get loading;
   @override
-  User? get loggedIn;
+  UserModel? get loggedIn;
   @override
   String get errorMessage;
   @override

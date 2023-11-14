@@ -174,6 +174,29 @@ class _$UserModelImpl extends _UserModel {
   @JsonKey(name: 'phone_number')
   final String? phoneNumber;
 
+  @override
+  String toString() {
+    return 'UserModel(id: $id, name: $name, image: $image, email: $email, phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UserModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                other.phoneNumber == phoneNumber));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, image, email, phoneNumber);
+
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')

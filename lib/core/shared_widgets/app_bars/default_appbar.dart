@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:interview_test/core/constants/app_icons.dart';
 import 'package:interview_test/core/constants/app_text_style_enum.dart';
-import 'package:interview_test/core/global_widgets/form_builder/app_text.dart';
+import 'package:interview_test/core/shared_widgets/form_builder/app_text.dart';
 import 'package:interview_test/core/themes/app_colors.dart';
 
 // ignore: must_be_immutable

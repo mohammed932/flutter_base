@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interview_test/core/global_widgets/form_builder/app_text.dart';
 
 import '../../generated/translations.g.dart';
 import '../constants/app_text_style_enum.dart';
+import 'form_builder/app_text.dart';
 
 class PrivacyWarning extends StatelessWidget {
   const PrivacyWarning({

@@ -2,12 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:interview_test/core/constants/enums.dart';
-import 'package:interview_test/core/extentions/string_extensions.dart';
-import 'package:interview_test/features/authentication/domin/entities/user.dart';
 
+import '../../../../../../core/constants/enums.dart';
 import '../../../../../../core/errors/failure.dart';
+import '../../../../../../core/extentions/string_extensions.dart';
 import '../../../../../../core/usecase/base_usecase.dart';
+import '../../../../data/models/user_model.dart';
+import '../../../../domin/repositories/base_login_repository.dart';
 
 part 'login_bloc.freezed.dart';
 part 'login_event.dart';
@@ -21,7 +22,7 @@ abstract class ILoginBloc extends Bloc<LoginEvent, LoginState> {
 }
 
 class LoginBloc extends ILoginBloc {
-  final BaseUseCase<User, LoginParams> loginUsecase;
+  final BaseUseCase<UserModel, LoginParams> loginUsecase;
   final TextEditingController phoneContoller = TextEditingController();
   final TextEditingController passwordContoller = TextEditingController();
   LoginBloc({required this.loginUsecase}) : super(LoginState.initial()) {
@@ -60,7 +61,7 @@ class LoginBloc extends ILoginBloc {
       loading: RequestState.LOADING,
       errorMessage: '',
     ));
-    Either<Failure, User> response = await loginUsecase.call(LoginParams(
+    Either<Failure, UserModel> response = await loginUsecase.call(LoginParams(
         phone: phoneContoller.text.trim(),
         password: passwordContoller.text.trim()));
 

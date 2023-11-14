@@ -4,7 +4,7 @@ part of 'login_bloc.dart';
 class LoginState with _$LoginState {
   const factory LoginState({
     @Default(RequestState.Init) RequestState loading,
-    User? loggedIn,
+    UserModel? loggedIn,
     @Default('') String errorMessage,
   }) = _LoginState;
 

@@ -1,5 +1,7 @@
-import 'package:interview_test/features/authentication/domin/entities/user.dart';
+import 'package:interview_test/features/authentication/data/models/user_model.dart';
+
+import '../../domin/repositories/base_login_repository.dart';
 
 abstract class BaseAuthDataSource {
-  Future<User> Login(LoginParams loginParams);
+  Future<UserModel> Login(LoginParams loginParams);
 }

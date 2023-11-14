@@ -2,12 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:interview_test/core/constants/app_icons.dart';
-import 'package:interview_test/core/constants/app_text_style_enum.dart';
-import 'package:interview_test/core/global_widgets/bottom_sheets/app_bottom_sheet.dart';
-import 'package:interview_test/core/global_widgets/form_builder/app_button/app_button.dart';
-import 'package:interview_test/core/themes/app_colors.dart';
-import 'package:interview_test/generated/translations.g.dart';
+
+import '../../../../../../core/constants/app_icons.dart';
+import '../../../../../../core/constants/app_text_style_enum.dart';
+import '../../../../../../core/shared_widgets/bottom_sheets/app_bottom_sheet.dart';
+import '../../../../../../core/shared_widgets/form_builder/app_button/app_button.dart';
+import '../../../../../../core/themes/app_colors.dart';
+import '../../../../../../generated/translations.g.dart';
 
 showChangeLanguageSheet(BuildContext context) {
   AppBottomSheetModel appBottomSheetModel = AppBottomSheetModel(
