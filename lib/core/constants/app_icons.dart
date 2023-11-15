@@ -14,10 +14,16 @@ class AppIcons {
   static const String notificationIcon = "${iconsPath}notification_icon.svg";
   static const String projectsIcon = "${iconsPath}projects.svg";
   static const String structuralIcon = "${iconsPath}structural_icon.svg";
+  static const String paintRollIcon = "${iconsPath}paint_roll_icon.svg";
+  static const String arrowDownIcon = "${iconsPath}arrow_drop_down_circle.svg";
+  static const String arrowUpIcon = "${iconsPath}arrow_drop_down_circle_up.svg";
   static const String supplyIcon =
       "${iconsPath}goods_merchandise_stock_supply_vendibles_icon.svg";
+  static const String duplexIcon = "${iconsPath}duplex_icon.svg";
+  static const String apartmentIcon = "${iconsPath}apartment_icon.svg";
+  static const String studioIcon = "${iconsPath}studio_icon.svg";
+  static const String villaIcon = "${iconsPath}villa_icon.svg";
 
-  static const String paintRollIcon = "${iconsPath}paint_roll_icon.svg";
   static const String messageCommunicationIcon =
       "${iconsPath}message_communication_icon.svg";
   static const String greenArrowCircleRightIcon =

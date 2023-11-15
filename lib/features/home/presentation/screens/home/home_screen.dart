@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
         appBar: DefaultAppBar.image(
           height: 60.h,
           bkColor: AppColors.white,
+          withShadow: true,
           leadingWidget: Row(
             children: [
               Gap(16.w),

@@ -1,20 +1,22 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
-import 'package:interview_test/features/authentication/presentation/screens/new-password/new_password.imports.dart';
-import 'package:interview_test/features/onbording/presentation/screens/onbording/onborading.imports.dart';
-import 'package:interview_test/features/onbording/presentation/screens/splash/splash.imports.dart';
-import 'package:interview_test/features/products/domain/entities/product.dart';
-import 'package:interview_test/features/products/presentation/screens/gift_tabs/tabs.imports.dart';
-import 'package:interview_test/features/products/presentation/screens/product_details/product_details.imports.dart';
-import 'package:interview_test/features/products/presentation/screens/products/products.imports.dart';
 
 import '../../features/Authentication/presentation/screens/login/login.imports.dart';
 import '../../features/authentication/presentation/screens/forget-password/forget.imports.dart';
+import '../../features/authentication/presentation/screens/new-password/new_password.imports.dart';
 import '../../features/authentication/presentation/screens/otp/otp.imports.dart';
 import '../../features/authentication/presentation/screens/signup/signup.imports.dart';
+ 
+import '../../features/calculateUnits/presentation/screens/unit_info/unit_info.imports.dart';
 import '../../features/favorites/presentation/screens/favorites_screen.dart';
 import '../../features/home/presentation/screens/bottom_tabs/bottom_tabs.imports.dart';
 import '../../features/home/presentation/screens/home/home.imports.dart';
+import '../../features/onbording/presentation/screens/onbording/onborading.imports.dart';
+import '../../features/onbording/presentation/screens/splash/splash.imports.dart';
+import '../../features/products/domain/entities/product.dart';
+import '../../features/products/presentation/screens/gift_tabs/tabs.imports.dart';
+import '../../features/products/presentation/screens/product_details/product_details.imports.dart';
+import '../../features/products/presentation/screens/products/products.imports.dart';
 import '../../features/profile/presentiaon/screens/profile.imports.dart';
 import '../../features/projects/presentation/screens/projects_screen.dart';
 
@@ -53,6 +55,10 @@ class AppRouter extends _$AppRouter {
         AutoRoute(
           page: NewPasswordRoute.page,
           path: "/new-password",
+        ),
+        AutoRoute(
+          page: UnitInfoRoute.page,
+          path: "/unit-info",
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,

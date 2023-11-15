@@ -23,7 +23,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? height;
   final VoidCallback? onPop;
   final Color? bkColor;
-  final double? elevation;
+  final bool withShadow;
   const DefaultAppBar._({
     this.title,
     this.image,
@@ -38,7 +38,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.preferredSizeWidget,
     this.onPop,
     this.bkColor,
-    this.elevation,
+    this.withShadow = false,
   });
   factory DefaultAppBar.normalAppBar({
     required String? title,
@@ -49,17 +49,20 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     PreferredSizeWidget? preferredSizeWidget,
     VoidCallback? onPop,
     Color? bkColor,
+    final bool? withShadow,
   }) {
     return DefaultAppBar._(
-        title: title ?? '',
-        appBarType: AppBarTypes.normalAppBar,
-        actions: actions ?? [],
-        isCenter: isCenter ?? false,
-        automaticallyImplyLeading: automaticallyImplyLeading ?? true,
-        height: height,
-        preferredSizeWidget: preferredSizeWidget,
-        onPop: onPop,
-        bkColor: bkColor);
+      title: title ?? '',
+      appBarType: AppBarTypes.normalAppBar,
+      actions: actions ?? [],
+      isCenter: isCenter ?? false,
+      automaticallyImplyLeading: automaticallyImplyLeading ?? true,
+      height: height,
+      preferredSizeWidget: preferredSizeWidget,
+      onPop: onPop,
+      bkColor: bkColor,
+      withShadow: withShadow ?? false,
+    );
   }
   factory DefaultAppBar.sliverAppBar({
     String? title,
@@ -93,7 +96,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
     VoidCallback? onPop,
     Color? bkColor,
     Widget? leadingWidget,
-    double? elevation,
+    final bool? withShadow,
   }) {
     return DefaultAppBar._(
         image: image,
@@ -106,7 +109,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPop: onPop,
         bkColor: bkColor,
         leadingWidget: leadingWidget,
-        elevation: elevation);
+        withShadow: withShadow ?? false);
   }
 
   @override
@@ -130,39 +133,34 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
             : _buildSliverAppBar(context);
   }
 
-  AppBar _buildNormalAppBar(BuildContext context) {
-    return AppBar(
-      elevation: elevation ?? 0,
-      title: _buildtitle(),
-      centerTitle: actions.isNotEmpty,
-      actions: [
-        Gap(16.w),
-        ...actions..map((e) => e),
-      ],
-      bottom: preferredSizeWidget,
-      automaticallyImplyLeading: automaticallyImplyLeading,
-      leading: getLeadingIcon(context),
-      titleSpacing: automaticallyImplyLeading ? 32 : 16.w,
-      backgroundColor: bkColor ?? AppColors.offWhite,
-    );
+  PreferredSize _buildNormalAppBar(BuildContext context) {
+    return PreferredSize(
+        preferredSize: _getSize(),
+        child: Container(
+          decoration: BoxDecoration(boxShadow: _buildShadow()),
+          child: AppBar(
+            elevation: 0,
+            title: _buildtitle(),
+            centerTitle: isCenter,
+            actions: [
+              Gap(16.w),
+              ...actions..map((e) => e),
+            ],
+            bottom: preferredSizeWidget,
+            automaticallyImplyLeading: automaticallyImplyLeading,
+            leading: getLeadingIcon(context),
+            titleSpacing: automaticallyImplyLeading ? 32 : 16.w,
+            backgroundColor: bkColor ?? AppColors.offWhite,
+          ),
+        ));
   }
 
   PreferredSize _buildImageAppBar(BuildContext context) {
     return PreferredSize(
-        preferredSize: Size.fromHeight(60.0),
+        preferredSize: _getSize(),
         child: Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.gray.withOpacity(0.1),
-                spreadRadius: 5,
-                blurRadius: 7,
-                offset: Offset(0, 3),
-              ),
-            ],
-          ),
+          decoration: BoxDecoration(boxShadow: _buildShadow()),
           child: AppBar(
-            elevation: elevation,
             title: _buildImage(),
             centerTitle: actions.isNotEmpty,
             actions: [
@@ -196,6 +194,19 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: tr(title ?? ''),
       style: AppTextStyle.primaryGreenW400F24,
     );
+  }
+
+  List<BoxShadow> _buildShadow() {
+    return withShadow
+        ? [
+            BoxShadow(
+              color: AppColors.gray.withOpacity(0.1),
+              spreadRadius: 5,
+              blurRadius: 7,
+              offset: Offset(0, 3),
+            ),
+          ]
+        : [];
   }
 
   Widget _buildImage() {

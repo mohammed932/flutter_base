@@ -9,7 +9,7 @@ import '../../features/home/domin/repositories/base_home_repository.dart';
 import '../../features/home/domin/usecases/get_carousel_list_usecase.dart';
 import '../../features/home/presentation/screens/home/bloc/home_bloc.dart';
 import '../../injection.dart';
-import 'data/repositories/auth_repository.dart';
+import 'data/repositories/home_repository.dart';
 
 @module
 abstract class HomeDiModule {

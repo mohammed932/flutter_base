@@ -139,6 +139,9 @@ class AppButton extends StatelessWidget {
           backgroundColor: getBackgroundColor(),
           padding: appButtonConfig?.padding ?? _scaledPadding(context),
           side: getBorder(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
           minimumSize: Size(
               appButtonConfig?.width ?? 345.w, appButtonConfig?.height ?? 50.w),
           fixedSize: Size(

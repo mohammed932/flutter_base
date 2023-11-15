@@ -51,5 +51,19 @@ abstract class  LocaleKeys {
   static const supplires_desc = 'supplires_desc';
   static const finishing_title = 'finishing_title';
   static const finishing_desc = 'finishing_desc';
+  static const unit_name = 'unit_name';
+  static const type_anything = 'type_anything';
+  static const unit_type = 'unit_type';
+  static const apartment = 'apartment';
+  static const studio = 'studio';
+  static const villa = 'villa';
+  static const duplex = 'duplex';
+  static const unit_location = 'unit_location';
+  static const choose_unit_location = 'choose_unit_location';
+  static const choose_area_of_your_unit = 'choose_area_of_your_unit';
+  static const choose_unit_area = 'choose_unit_area';
+  static const choose_the_floor_of_your_nit = 'choose_the_floor_of_your_nit';
+  static const choose_floor = 'choose_floor';
+  static const continue_to_next = 'continue_to_next';
 
 }

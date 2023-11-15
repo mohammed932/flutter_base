@@ -23,6 +23,7 @@ enum AppTextStyle {
 
   //gray //
   grayW400F16,
+  grayW400F20,
 
   //RED//
   redW400F16,

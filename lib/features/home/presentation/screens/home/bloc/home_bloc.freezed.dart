@@ -279,49 +279,12 @@ abstract class _GetCarouselList implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)
-        $default, {
-    required TResult Function() initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
+  RequestState get requestState => throw _privateConstructorUsedError;
+  List<CarouselModel>? get carouselsList => throw _privateConstructorUsedError;
+  String get errorMessage => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $HomeStateCopyWith<HomeState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -329,6 +292,11 @@ mixin _$HomeState {
 abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res, HomeState>;
+  @useResult
+  $Res call(
+      {RequestState requestState,
+      List<CarouselModel>? carouselsList,
+      String errorMessage});
 }
 
 /// @nodoc
@@ -340,16 +308,41 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? requestState = null,
+    Object? carouselsList = freezed,
+    Object? errorMessage = null,
+  }) {
+    return _then(_value.copyWith(
+      requestState: null == requestState
+          ? _value.requestState
+          : requestState // ignore: cast_nullable_to_non_nullable
+              as RequestState,
+      carouselsList: freezed == carouselsList
+          ? _value.carouselsList
+          : carouselsList // ignore: cast_nullable_to_non_nullable
+              as List<CarouselModel>?,
+      errorMessage: null == errorMessage
+          ? _value.errorMessage
+          : errorMessage // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$HomeStateImplCopyWith<$Res> {
+abstract class _$$HomeStateImplCopyWith<$Res>
+    implements $HomeStateCopyWith<$Res> {
   factory _$$HomeStateImplCopyWith(
           _$HomeStateImpl value, $Res Function(_$HomeStateImpl) then) =
       __$$HomeStateImplCopyWithImpl<$Res>;
+  @override
   @useResult
   $Res call(
-      {RequestState loading,
+      {RequestState requestState,
       List<CarouselModel>? carouselsList,
       String errorMessage});
 }
@@ -365,14 +358,14 @@ class __$$HomeStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? loading = null,
+    Object? requestState = null,
     Object? carouselsList = freezed,
     Object? errorMessage = null,
   }) {
     return _then(_$HomeStateImpl(
-      loading: null == loading
-          ? _value.loading
-          : loading // ignore: cast_nullable_to_non_nullable
+      requestState: null == requestState
+          ? _value.requestState
+          : requestState // ignore: cast_nullable_to_non_nullable
               as RequestState,
       carouselsList: freezed == carouselsList
           ? _value._carouselsList
@@ -390,14 +383,14 @@ class __$$HomeStateImplCopyWithImpl<$Res>
 
 class _$HomeStateImpl implements _HomeState {
   const _$HomeStateImpl(
-      {this.loading = RequestState.LOADING,
+      {this.requestState = RequestState.LOADING,
       final List<CarouselModel>? carouselsList,
       this.errorMessage = ''})
       : _carouselsList = carouselsList;
 
   @override
   @JsonKey()
-  final RequestState loading;
+  final RequestState requestState;
   final List<CarouselModel>? _carouselsList;
   @override
   List<CarouselModel>? get carouselsList {
@@ -414,7 +407,7 @@ class _$HomeStateImpl implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(loading: $loading, carouselsList: $carouselsList, errorMessage: $errorMessage)';
+    return 'HomeState(requestState: $requestState, carouselsList: $carouselsList, errorMessage: $errorMessage)';
   }
 
   @override
@@ -422,7 +415,8 @@ class _$HomeStateImpl implements _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$HomeStateImpl &&
-            (identical(other.loading, loading) || other.loading == loading) &&
+            (identical(other.requestState, requestState) ||
+                other.requestState == requestState) &&
             const DeepCollectionEquality()
                 .equals(other._carouselsList, _carouselsList) &&
             (identical(other.errorMessage, errorMessage) ||
@@ -430,7 +424,7 @@ class _$HomeStateImpl implements _HomeState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, loading,
+  int get hashCode => Object.hash(runtimeType, requestState,
       const DeepCollectionEquality().hash(_carouselsList), errorMessage);
 
   @JsonKey(ignore: true)
@@ -438,194 +432,22 @@ class _$HomeStateImpl implements _HomeState {
   @pragma('vm:prefer-inline')
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       __$$HomeStateImplCopyWithImpl<_$HomeStateImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)
-        $default, {
-    required TResult Function() initial,
-  }) {
-    return $default(loading, carouselsList, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult? Function()? initial,
-  }) {
-    return $default?.call(loading, carouselsList, errorMessage);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(loading, carouselsList, errorMessage);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_Initial value) initial,
-  }) {
-    return $default(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return $default?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
-  }
 }
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {final RequestState loading,
+      {final RequestState requestState,
       final List<CarouselModel>? carouselsList,
       final String errorMessage}) = _$HomeStateImpl;
 
-  RequestState get loading;
+  @override
+  RequestState get requestState;
+  @override
   List<CarouselModel>? get carouselsList;
+  @override
   String get errorMessage;
+  @override
   @JsonKey(ignore: true)
   _$$HomeStateImplCopyWith<_$HomeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
-
-  @override
-  String toString() {
-    return 'HomeState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)
-        $default, {
-    required TResult Function() initial,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>(
-    TResult Function(RequestState loading, List<CarouselModel>? carouselsList,
-            String errorMessage)?
-        $default, {
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements HomeState {
-  const factory _Initial() = _$InitialImpl;
 }

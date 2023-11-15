@@ -12,6 +12,7 @@ class AppColors {
   static const Color brown = Color(0xff4D3A00);
   static const Color lightYellow = Color(0xffFAD35E);
   static const Color yellow = Color(0xffF6BE13);
+  static const Color cardsColor = Color(0xffFBFCF4);
   static const Color black = Colors.black;
   static const Color white = Colors.white;
 }

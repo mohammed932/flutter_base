@@ -17,7 +17,7 @@ abstract class IHomeBloc extends Bloc<HomeEvent, HomeState> {
 
 class HomeBloc extends IHomeBloc {
   final BaseUseCase<List<CarouselModel>, NoParams> getCurouselListUsecase;
-  HomeBloc({required this.getCurouselListUsecase}) : super(_Initial()) {
+  HomeBloc({required this.getCurouselListUsecase}) : super(HomeState()) {
     on<HomeEvent>((event, emit) async {
       if (event is _GetCarouselList) {
         getCarouselList();

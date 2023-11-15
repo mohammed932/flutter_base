@@ -40,7 +40,7 @@ class AppTextFormField extends StatelessWidget {
     this.maxLength,
     this.type = FormTextType.full,
   }) : super(key: key);
-  final String labelText;
+  final String? labelText;
   final String? hintText;
   final TextEditingController? controller;
   final String? Function(String?)? validator;
@@ -70,7 +70,6 @@ class AppTextFormField extends StatelessWidget {
   final int? maxLength;
   final FormTextType type;
   factory AppTextFormField.basic({
-    required String labelText,
     String? hintText,
     TextEditingController? controller,
     String? Function(String?)? validator,
@@ -100,7 +99,7 @@ class AppTextFormField extends StatelessWidget {
     int? maxLength,
   }) {
     return AppTextFormField(
-      labelText: labelText,
+      labelText: null,
       hintText: hintText,
       controller: controller,
       validator: validator,
@@ -143,7 +142,7 @@ class AppTextFormField extends StatelessWidget {
                 Container(
                   alignment: AlignmentDirectional.topStart,
                   child: AppText(
-                    title: tr(labelText),
+                    title: tr(labelText ?? ''),
                     style: AppTextStyle.primaryGreenW500F16,
                   ),
                 ),

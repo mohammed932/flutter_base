@@ -10,6 +10,7 @@ abstract class ICustomThemeData {
   TextStyle get primaryGreenW400F24;
   TextStyle get primaryGreenW400F30;
   TextStyle get grayW400F16;
+  TextStyle get grayW400F20;
   TextStyle get primaryGreenW500F16;
   TextStyle get darkGreenW400F20;
   TextStyle get redW400F16;
@@ -107,6 +108,11 @@ class CustomLightTheme implements ICustomThemeData {
         fontWeight: FontWeight.w400,
         fontSize: 16.sp,
       );
+  TextStyle get grayW400F20 => TextStyle(
+        color: AppColors.gray,
+        fontWeight: FontWeight.w400,
+        fontSize: 20.sp,
+      );
 
   //RED//
 
@@ -199,4 +205,8 @@ class CustomDarkTheme implements ICustomThemeData {
   @override
   // TODO: implement primaryGreenW400F18
   TextStyle get primaryGreenW400F18 => throw UnimplementedError();
+
+  @override
+  // TODO: implement grayW400F20
+  TextStyle get grayW400F20 => throw UnimplementedError();
 }

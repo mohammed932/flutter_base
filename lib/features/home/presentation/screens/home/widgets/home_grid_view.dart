@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:interview_test/core/constants/app_icons.dart';
 import 'package:interview_test/core/constants/app_text_style_enum.dart';
+import 'package:interview_test/core/router/router.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_button/app_button.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_button/icon_widget.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_text.dart';
@@ -22,7 +24,7 @@ class HomeGridView extends StatelessWidget {
         desc: LocaleKeys.calculate_des,
         bkColor: AppColors.primaryGreen,
         arrowIcon: AppIcons.arrowCircleRightIcon,
-        onTap: () {},
+        onTap: () => context.router.push(UnitInfoRoute()),
       ),
       GridItemModel(
         icon: AppIcons.galleryIcon,
@@ -56,7 +58,7 @@ class HomeGridView extends StatelessWidget {
 
     double screenWidth = MediaQuery.of(context).size.width;
 
-    double crossAxisSpacing = screenWidth > 600 ? 16.0 : 8.0;
+    double crossAxisSpacing = screenWidth > 600 ? 16.0 : 2.h;
     double mainAxisSpacing = screenWidth > 600 ? 16.0 : 8.0;
     return GridView.builder(
       shrinkWrap: true,
@@ -122,7 +124,7 @@ class GridItem extends StatelessWidget {
             Gap(8.h),
             AppText.full(
               title: tr(gridItemModel.desc),
-              maxLines: 3,
+              maxLines: 2,
               style: gridItemModel.bodyTextStyle ?? AppTextStyle.whiteW400F12,
             ),
             Spacer(),
