@@ -143,8 +143,8 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
             title: _buildtitle(),
             centerTitle: isCenter,
             actions: [
-              Gap(16.w),
               ...actions..map((e) => e),
+              Gap(16.w),
             ],
             bottom: preferredSizeWidget,
             automaticallyImplyLeading: automaticallyImplyLeading,

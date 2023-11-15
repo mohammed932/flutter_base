@@ -23,6 +23,19 @@ class AppIcons {
   static const String apartmentIcon = "${iconsPath}apartment_icon.svg";
   static const String studioIcon = "${iconsPath}studio_icon.svg";
   static const String villaIcon = "${iconsPath}villa_icon.svg";
+  static const String addRoomIcon = "${iconsPath}add_room_icon.svg";
+  static const String tablerBrushIcon = "${iconsPath}tabler_brush.svg";
+  static const String livingRoomIcon = "${iconsPath}living-room.svg";
+  static const String kitchenRoomIcon = "${iconsPath}kitchen-room.svg";
+  static const String bedRoomIcon = "${iconsPath}bedroom.svg";
+  static const String cloakRoomIcon = "${iconsPath}cloakroom.svg";
+  static const String babysRoomIcon = "${iconsPath}babys-room.svg";
+  static const String corridorIcon = "${iconsPath}corridor.svg";
+  static const String diningRoomIcon = "${iconsPath}dining-room.svg";
+  static const String homeOfficeIcon = "${iconsPath}home-office.svg";
+  static const String balconyIcon = "${iconsPath}balcony.svg";
+  static const String washingMachineIcon = "${iconsPath}washing-machine.svg";
+  static const String joystickIcon = "${iconsPath}joystick.svg";
 
   static const String messageCommunicationIcon =
       "${iconsPath}message_communication_icon.svg";

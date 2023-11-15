@@ -10,6 +10,7 @@ import 'package:interview_test/core/shared_widgets/form_builder/app_text.dart';
 import 'package:interview_test/core/themes/app_colors.dart';
 
 typedef OnSelect<T> = void Function(T selectedItem);
+typedef ItemsTitles<T> = String Function(T item);
 
 class AppDropSelection<T> extends StatefulWidget {
   const AppDropSelection({
@@ -18,11 +19,13 @@ class AppDropSelection<T> extends StatefulWidget {
     required this.hint,
     required this.items,
     required this.onSelect,
+    required this.itemTitle,
   }) : super(key: key);
   final String hint;
   final String title;
   final List<T> items;
   final OnSelect<T> onSelect;
+  final ItemsTitles<T> itemTitle;
 
   @override
   State<AppDropSelection<T>> createState() => _AppDropSelectionState<T>();
@@ -135,7 +138,7 @@ class _AppDropSelectionState<T> extends State<AppDropSelection<T>> {
                       ),
                     ),
             ),
-            child: Text(widget.items[index].toString()),
+            child: Text(widget.itemTitle(widget.items[index])),
           ),
         ),
       ),

@@ -1,11 +1,14 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:interview_test/core/constants/app_text_style_enum.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_button/app_button.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_button/icon_widget.dart';
 import 'package:interview_test/core/shared_widgets/form_builder/app_text.dart';
 import 'package:interview_test/core/themes/app_colors.dart';
+import 'package:interview_test/features/calculateUnits/presentation/screens/unit_info/bloc/unit_info_bloc.dart';
+import 'package:interview_test/injection.dart';
 
 import '../../../../../../core/constants/app_icons.dart';
 import '../../../../../../generated/translations.g.dart';
@@ -19,36 +22,46 @@ class UnitTypesScelection extends StatelessWidget {
       UnitTypesScelectionModel(
           icon: AppIcons.apartmentIcon,
           title: LocaleKeys.apartment,
-          isSelected: true,
-          onSelect: (int index) {}),
+          onSelect: (int index) => getIt.get<IUnitInfoBloc>()
+            ..add(UnitInfoEvent.selectUnitType(LocaleKeys.apartment))),
       UnitTypesScelectionModel(
           icon: AppIcons.studioIcon,
           title: LocaleKeys.studio,
-          onSelect: (int index) {}),
+          onSelect: (int index) => getIt.get<IUnitInfoBloc>()
+            ..add(UnitInfoEvent.selectUnitType(LocaleKeys.studio))),
       UnitTypesScelectionModel(
           icon: AppIcons.villaIcon,
           title: LocaleKeys.villa,
-          onSelect: (int index) {}),
+          onSelect: (int index) => getIt.get<IUnitInfoBloc>()
+            ..add(UnitInfoEvent.selectUnitType(LocaleKeys.villa))),
       UnitTypesScelectionModel(
           icon: AppIcons.duplexIcon,
           title: LocaleKeys.duplex,
-          onSelect: (int index) {}),
+          onSelect: (int index) => getIt.get<IUnitInfoBloc>()
+            ..add(UnitInfoEvent.selectUnitType(LocaleKeys.duplex))),
     ];
 
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    return GridView.builder(
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2, // Number of items in each row
-        crossAxisSpacing: 8.0, // Spacing between columns
-        mainAxisSpacing: 8.0, // Spacing between rows
-        childAspectRatio: 1.5,
-      ),
-      itemCount: _items.length,
-      itemBuilder: (BuildContext context, int index) {
-        return UnitTypeItem(unitTypesScelectionModel: _items[index]);
+    return BlocBuilder<IUnitInfoBloc, UnitInfoState>(
+      builder: (context, state) {
+        return GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2, // Number of items in each row
+            crossAxisSpacing: 8.0, // Spacing between columns
+            mainAxisSpacing: 8.0, // Spacing between rows
+            childAspectRatio: 1.5,
+          ),
+          itemCount: _items.length,
+          itemBuilder: (BuildContext context, int index) {
+            UnitTypesScelectionModel unitTypesScelectionModel = _items[index];
+            if (unitTypesScelectionModel.title == state.unitType) {
+              unitTypesScelectionModel.isSelected = true;
+            }
+            return UnitTypeItem(
+                unitTypesScelectionModel: unitTypesScelectionModel);
+          },
+        );
       },
     );
   }
@@ -99,7 +112,7 @@ class UnitTypeItem extends StatelessWidget {
 class UnitTypesScelectionModel {
   final String title;
   final String icon;
-  final bool isSelected;
+  bool isSelected;
   final Function(int) onSelect;
 
   UnitTypesScelectionModel(

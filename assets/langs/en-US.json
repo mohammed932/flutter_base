@@ -63,5 +63,10 @@
   "choose_unit_area":"Choose unit Area",
   "choose_the_floor_of_your_nit":"choose the floor of your Unit",
   "choose_floor":"Choose floor",
-  "continue_to_next":"Continue"
+  "continue_to_next":"Continue",
+  "room_name":"Room Name",
+  "length":"Length",
+  "width":"Width",
+  "show_price":"Show me the price",
+ "save_to_projects": "Save to Projects"
 }
