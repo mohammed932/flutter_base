@@ -1,6 +1,10 @@
+import 'dart:developer';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:interview_test/features/home/presentation/screens/home/bloc/home_bloc.dart';
 
 import '../../../../../../core/constants/app_images.dart';
 import '../../../../../../core/constants/app_text_style_enum.dart';
@@ -8,48 +12,51 @@ import '../../../../../../core/shared_widgets/form_builder/app_text.dart';
 import '../../../../../../core/themes/app_colors.dart';
 
 class HomeCarousel extends StatelessWidget {
-  const HomeCarousel({
-    super.key,
-  });
+  const HomeCarousel({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: MediaQuery.of(context).size.width,
-        height: 285.h,
-        child: Stack(
-          fit: StackFit.expand,
-          children: [
-            CarouselSlider.builder(
-              options: CarouselOptions(
-                viewportFraction: 1,
-                autoPlay: true,
-                enlargeCenterPage: true,
-                disableCenter: true,
-                onPageChanged: (index, reason) {},
-              ),
-              itemCount: 4,
-              itemBuilder: (context, index, _) {
-                return CarouselItem();
-              },
-            ),
-            Positioned(
-              bottom: 10,
-              left: 0,
-              right: 0,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(4, (index) {
-                  return const TabPageSelectorIndicator(
-                    backgroundColor: AppColors.primaryGreen,
-                    borderColor: AppColors.green,
-                    size: 10,
-                  );
-                }).toList(),
-              ),
-            ),
-          ],
-        ));
+    return BlocBuilder<IHomeBloc, HomeState>(
+      builder: (context, state) {
+        log("loading ${state.toString()}");
+        return Container(
+            width: MediaQuery.of(context).size.width,
+            height: 285.h,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                CarouselSlider.builder(
+                  options: CarouselOptions(
+                    viewportFraction: 1,
+                    autoPlay: true,
+                    enlargeCenterPage: true,
+                    disableCenter: true,
+                    onPageChanged: (index, reason) {},
+                  ),
+                  itemCount: 4,
+                  itemBuilder: (context, index, _) {
+                    return CarouselItem();
+                  },
+                ),
+                Positioned(
+                  bottom: 10,
+                  left: 0,
+                  right: 0,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(4, (index) {
+                      return const TabPageSelectorIndicator(
+                        backgroundColor: AppColors.primaryGreen,
+                        borderColor: AppColors.green,
+                        size: 10,
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ],
+            ));
+      },
+    );
   }
 }
 

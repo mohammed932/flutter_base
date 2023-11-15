@@ -1,7 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:interview_test/features/authentication/data/datasources/auth_datasource.dart';
 import 'package:interview_test/features/authentication/data/datasources/base_auth_datasource.dart';
-import 'package:interview_test/features/authentication/domin/entities/user.dart';
 import 'package:interview_test/features/authentication/domin/repositories/base_login_repository.dart';
 import 'package:interview_test/features/authentication/domin/usecases/login_usecase.dart';
 import 'package:interview_test/features/authentication/presentation/screens/login/bloc/login_bloc.dart';
