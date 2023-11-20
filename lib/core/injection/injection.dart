@@ -1,6 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:injectable/injectable.dart';
-import 'package:interview_test/injection.config.dart';
+import 'package:interview_test/core/injection/injection.config.dart';
 
 final getIt = GetIt.instance;
 

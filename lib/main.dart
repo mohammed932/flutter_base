@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:interview_test/core/injection/injection.dart';
 import 'package:interview_test/core/router/router.dart';
-import 'package:interview_test/features/products/presentation/screens/products/products.imports.dart';
-import 'package:interview_test/injection.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

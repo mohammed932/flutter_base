@@ -13,7 +13,10 @@ class _ProductsScreenState extends State<ProductsScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) =>
-          getIt.get<IProductsBloc>()..add(const LoadProductsEvent()),
+          ProductsBloc(productsUseCase: getIt.get<GetProductsUsecase>())
+            ..add(const LoadProductsEvent()),
+      // create: (context) =>
+      //     getIt.get<IProductsBloc>()..add(const LoadProductsEvent()),
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Products'),
@@ -28,7 +31,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
             ),
           ],
         ),
-        body: BlocBuilder<IProductsBloc, ProductsState>(
+        body: BlocBuilder<ProductsBloc, ProductsState>(
           builder: (context, state) {
             switch (state.productListState) {
               case RequestState.LOADED:

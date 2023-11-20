@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 import 'package:interview_test/core/errors/exception.dart';
 import 'package:interview_test/core/network/api_strings.dart';
 
 import 'network_interface.dart';
 
+@LazySingleton(as: BaseNetwork)
 class DioHelper implements BaseNetwork {
   final Dio dio;
   DioHelper({required this.dio});

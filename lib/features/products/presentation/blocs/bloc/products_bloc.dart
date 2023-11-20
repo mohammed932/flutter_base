@@ -9,11 +9,7 @@ part 'products_event.dart';
 part 'products_state.dart';
 part 'products_bloc.freezed.dart';
 
-abstract class IProductsBloc extends Bloc<ProductsEvent, ProductsState> {
-  IProductsBloc(super.initialState);
-}
-
-class ProductsBloc extends IProductsBloc {
+class ProductsBloc extends Bloc<ProductsEvent, ProductsState> {
   final BaseUseCase productsUseCase;
   ProductsBloc({required this.productsUseCase}) : super(const ProductsState()) {
     on<LoadProductsEvent>((event, emit) async {

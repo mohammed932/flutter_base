@@ -1,10 +1,12 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import '../../../../core/errors/exception.dart';
 import '../../../../core/errors/failure.dart';
 import '../../domain/entities/product.dart';
 import '../../domain/repositories/base_product_repository.dart';
 import '../datasources/base_products_datasource.dart';
 
+@Injectable(as: BaseProductRepository)
 class ProductsRepository implements BaseProductRepository {
   final BaseProductsDataSource productsDataSource;
   ProductsRepository({required this.productsDataSource});
