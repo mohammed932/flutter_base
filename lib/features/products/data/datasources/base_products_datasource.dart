@@ -1,5 +1,5 @@
-import 'package:interview_test/features/products/domain/entities/product.dart';
+import 'package:interview_test/features/products/data/models/product_model/product_model.dart';
 
 abstract class BaseProductsDataSource {
-  Future<List<Product>> getProducts();
+  Future<List<ProductModel>> getProducts();
 }

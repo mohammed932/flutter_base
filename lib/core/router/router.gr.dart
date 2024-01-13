@@ -117,7 +117,7 @@ class GiftTabsRoute extends PageRouteInfo<void> {
 class ProductDetailsRoute extends PageRouteInfo<ProductDetailsRouteArgs> {
   ProductDetailsRoute({
     Key? key,
-    required Product product,
+    required ProductModel product,
     List<PageRouteInfo>? children,
   }) : super(
           ProductDetailsRoute.name,
@@ -142,7 +142,7 @@ class ProductDetailsRouteArgs {
 
   final Key? key;
 
-  final Product product;
+  final ProductModel product;
 
   @override
   String toString() {

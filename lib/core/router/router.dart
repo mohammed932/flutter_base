@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
-import 'package:interview_test/features/products/domain/entities/product.dart';
 import 'package:interview_test/features/products/presentation/screens/bottom_tabs/bottom_tabs.imports.dart';
 import 'package:interview_test/features/products/presentation/screens/gift_tabs/tabs.imports.dart';
 import 'package:interview_test/features/products/presentation/screens/product_details/product_details.imports.dart';
 import 'package:interview_test/features/products/presentation/screens/products/products.imports.dart';
+
+import '../../features/products/data/models/product_model/product_model.dart';
 
 part 'router.gr.dart';
 

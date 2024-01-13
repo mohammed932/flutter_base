@@ -2,7 +2,7 @@ part of 'product_details.imports.dart';
 
 @RoutePage()
 class ProductDetailsScreen extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const ProductDetailsScreen({super.key, required this.product});
 
   @override
@@ -15,7 +15,7 @@ class ProductDetailsScreen extends StatelessWidget {
           children: [
             Card(
               child: Image.network(
-                product.image ?? AppImages.failbackImage600,
+                product.image,
                 fit: BoxFit.contain,
                 height: 300,
                 width: double.infinity,
@@ -30,7 +30,7 @@ class ProductDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    product.title ?? '',
+                    product.title,
                     style: const TextStyle(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
@@ -49,7 +49,7 @@ class ProductDetailsScreen extends StatelessWidget {
                         ),
                       ),
                       RatingBarIndicator(
-                        rating: product.rating?.rate.toDouble() ?? 0.0,
+                        rating: product.rating?.rate ?? 0.0,
                         itemBuilder: (context, index) => const Icon(
                           Icons.star,
                           color: Colors.amber,
@@ -64,7 +64,7 @@ class ProductDetailsScreen extends StatelessWidget {
                     height: 10.0,
                   ),
                   Text(
-                    product.description ?? '',
+                    product.description,
                     style: const TextStyle(
                       fontSize: 14.0,
                     ),

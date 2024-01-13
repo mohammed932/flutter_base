@@ -167,7 +167,7 @@ abstract class LoadProductsEvent implements ProductsEvent {
 /// @nodoc
 mixin _$ProductsState {
   RequestState get productListState => throw _privateConstructorUsedError;
-  List<Product> get products => throw _privateConstructorUsedError;
+  List<ProductModel> get products => throw _privateConstructorUsedError;
   String get errorMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -183,7 +183,7 @@ abstract class $ProductsStateCopyWith<$Res> {
   @useResult
   $Res call(
       {RequestState productListState,
-      List<Product> products,
+      List<ProductModel> products,
       String errorMessage});
 }
 
@@ -212,7 +212,7 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
       products: null == products
           ? _value.products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as List<ProductModel>,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -231,7 +231,7 @@ abstract class _$$ProductsStateImplCopyWith<$Res>
   @useResult
   $Res call(
       {RequestState productListState,
-      List<Product> products,
+      List<ProductModel> products,
       String errorMessage});
 }
 
@@ -258,7 +258,7 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
       products: null == products
           ? _value._products
           : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+              as List<ProductModel>,
       errorMessage: null == errorMessage
           ? _value.errorMessage
           : errorMessage // ignore: cast_nullable_to_non_nullable
@@ -272,17 +272,17 @@ class __$$ProductsStateImplCopyWithImpl<$Res>
 class _$ProductsStateImpl implements _ProductsState {
   const _$ProductsStateImpl(
       {this.productListState = RequestState.LOADING,
-      final List<Product> products = const [],
+      final List<ProductModel> products = const [],
       this.errorMessage = ''})
       : _products = products;
 
   @override
   @JsonKey()
   final RequestState productListState;
-  final List<Product> _products;
+  final List<ProductModel> _products;
   @override
   @JsonKey()
-  List<Product> get products {
+  List<ProductModel> get products {
     if (_products is EqualUnmodifiableListView) return _products;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_products);
@@ -323,13 +323,13 @@ class _$ProductsStateImpl implements _ProductsState {
 abstract class _ProductsState implements ProductsState {
   const factory _ProductsState(
       {final RequestState productListState,
-      final List<Product> products,
+      final List<ProductModel> products,
       final String errorMessage}) = _$ProductsStateImpl;
 
   @override
   RequestState get productListState;
   @override
-  List<Product> get products;
+  List<ProductModel> get products;
   @override
   String get errorMessage;
   @override

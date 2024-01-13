@@ -4,8 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:interview_test/core/constants/enums.dart';
 import 'package:interview_test/core/injection/injection.dart';
 import 'package:interview_test/core/router/router.dart';
-import 'package:interview_test/features/products/domain/usecases/get_products_usecase.dart';
-import '../../../domain/entities/product.dart';
+import '../../../data/models/product_model/product_model.dart';
 import '../../blocs/bloc/products_bloc.dart';
 import 'widgets/products_widgets.imports.dart';
 
